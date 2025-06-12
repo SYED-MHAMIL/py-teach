@@ -133,14 +133,60 @@ import time
 #         fn()
 #     return wrapper
 
+# @timer
+# def slow_function():
+#     time.sleep(2)
+#     print("Done")
+# slow_function()
 
 
 
 
-@timer
-def slow_function():
-    time.sleep(2)
-    print("Done")
+
+#   Q# Task: Create a decorator @repeat(n) that repeats a function n times.
 
 
-slow_function()
+# def repeat(n):
+#     def decortor(fn):
+#         def wrapper(*args,**kwargs):
+#             for _ in range(n):
+#                  fn(*args,**kwargs)
+            
+#         return wrapper
+#     return decortor
+
+# @repeat(3)
+# def greet(name):
+#     print(f"hi {name}")
+
+# greet("ali")
+
+
+
+
+# Task: Create a decorator @only_even_args that raises an error if any argument passed to the function is odd.
+
+
+# def only_even_args(fn):
+#     def wrapper(*args,**Kwargs):
+#         even = fn(*args,**Kwargs)
+#         if even%2 ==0:
+#             print("Work")
+#         else:
+#             print("ERror")
+#     return wrapper
+
+
+
+
+# @only_even_args
+# def add(a, b):
+#     return a + b
+
+
+
+# add(3,4)
+# add(2,4)
+
+
+
