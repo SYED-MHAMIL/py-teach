@@ -19,9 +19,9 @@
 
 ##################  After  COMPREHENSIVE  #################
 
-# fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
 
-# newlist = [x for x in fruits if "a" in x]
+newlist = [x for x in fruits if "a" in x]
 
 # print(newlist)  
 
@@ -29,11 +29,11 @@
 
 # ====================    Exmaple
 
-# mat = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+mat = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
-# res = [n for upper in mat  for n in upper ]
+res = [n for upper in mat  for n in upper ]
 
-# print(res)
+print(res)
 
 
 
@@ -43,8 +43,8 @@
 
 
 # Nested list comprehension
-# matrix = [[n for n in range(5)] for i in range(5)]
-# print(matrix)
+matrix = [[n for n in range(5)] for i in range(5)]
+print(matrix)
 
 
 
@@ -58,17 +58,17 @@
 
 
 matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-# odd_numbers = []
-# for mat in matrix:
-#     for m in mat:
-#         if m%2 != 0 :
-#            odd_numbers.append(m)
-# print(odd_numbers)
+odd_numbers = []
+for mat in matrix:
+    for m in mat:
+        if m%2 != 0 :
+           odd_numbers.append(m)
+print(odd_numbers)
 
 #    ===========   FROM LIST COMPREHENSIVE
 
-# odd =[m for mat in matrix for m in mat if m%2 != 0]
-# print(odd)
+odd =[m for mat in matrix for m in mat if m%2 != 0]
+print(odd)
 
 
 
@@ -86,25 +86,16 @@ data = [
 ]
 
 
-# extract = [eachObj for eachObj in data for key in eachObj if eachObj["marks"]["Math"] or eachObj["marks"]["English"] >=95 ]
 
-# extract = []
-# for a in data:
-#     for key in a:
-#         if a["marks"]["Math"] >= 90 :
-#            extract.append(a)
- 
+import json
 
-
-# import json
-
-# unique_data = list({json.dumps(d, sort_keys=True) for extract in data})
-# unique_data = [json.loads(d) for d in unique_data]
+unique_data = list({json.dumps(d, sort_keys=True) for extract in data})
+unique_data = [json.loads(d) for d in unique_data]
 
 
 
 
-# result  = [d["name"] for d in data if all( k >=50 for k in d["marks"].values() )] 
+result  = [d["name"] for d in data if all( k >=50 for k in d["marks"].values() )] 
 result = [d["name"] for d in data if all(k >=50 for k in d["marks"].values())]
 # print(result)
 
