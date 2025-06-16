@@ -91,18 +91,39 @@ num_int: int = 42
 
 
 
-byte_array: bytearray = bytearray(b'hello') #99c, 66=B ....decimal number system
-print(type(byte_array), " byte_array = ", byte_array)  # <class 'bytearray'>
-print(byte_array)
-print(chr(byte_array[3]))
-sec_byte : bytearray= bytearray()
-print("Empty bytearray(): ",sec_byte)
+# byte_array: bytearray = bytearray(b'hello') #99c, 66=B ....decimal number system
+# print(type(byte_array), " byte_array = ", byte_array)  # <class 'bytearray'>
+# print(byte_array)
+# print(chr(byte_array[3]))
+# sec_byte : bytearray= bytearray()
+# print("Empty bytearray(): ",sec_byte)
 
 
-# 4. 🧪 Convert Text to Bytes and Back
-text = "string"
-b = bytearray(b'string')  # Encode
-print(b )  # bytearray(b'hello')
+# # 4. 🧪 Convert Text to Bytes and Back
+# text = "string"
+# b = bytearray(b'string')  # Encode
+# print(b )  # bytearray(b'hello')
 
-# Convert back
-print(b.decode())  # 'hello'
+# # Convert back
+# print(b.decode())  # 'hello'
+
+
+
+
+
+# import pickle
+import json 
+pickle ={
+     "dumps": lambda x: json.dumps(x) ,
+     "loads" :lambda x: json.loads(x)
+}
+obj = {"name": "Ali", "age": 25}
+
+# Convert (serialize) object to bytes
+b = bytearray(pickle["dumps"](obj))
+print(b)  # Now it's stored in byte format
+
+# Convert back (deserialize)
+# original_obj = pickle.loads(b)
+# print(b)  # Output: {'name': 'Ali', 'age': 25}
+
