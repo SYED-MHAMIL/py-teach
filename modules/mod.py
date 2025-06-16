@@ -1,5 +1,7 @@
-from fees.payment import pay
 from login import login
+
+from fees.payment import pay
+
 def greet(username):
     login(username)
     print("hello")
