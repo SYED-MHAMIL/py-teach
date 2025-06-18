@@ -165,18 +165,25 @@
 #         else:
 #              line+= 1                
 
-def findevenno():
-    with open("practise.txt",'r') as f:
-        d= f.read()
-        count =0
-        for a in d.split(","):
-            if int(a)%2 == 0:
-                count +=1
-        print(count)
+# def findevenno():
+#     with open("practise.txt",'r') as f:
+#         d= f.read()
+#         count =0
+#         for a in d.split(","):
+#             if int(a)%2 == 0:
+#                 count +=1
+#         print(count)
             
                 
             
-findevenno()
+# findevenno()
+
+
+
+
+
+
+
     
    
 
