@@ -1,30 +1,30 @@
-import math
+# import math
 
-#  1. Count Prime Numbers in a File
-with open("number.txt","w") as file:
-    file.write("23,12,4,9,7,29,30,31")
+# #  1. Count Prime Numbers in a File
+# with open("number.txt","w") as file:
+#     file.write("23,12,4,9,7,29,30,31")
 
 
-def isPrime(n):
-    if n<=1:
-        return False
-    if n == 2 :
-        return True
-    if n%2 == 0 :
-        return False
-    for i in range(3,int(math.sqrt(n))+1 ,2):
-        if n%i == 0 :
-            return False
-    return True
+# def isPrime(n):
+#     if n<=1:
+#         return False
+#     if n == 2 :
+#         return True
+#     if n%2 == 0 :
+#         return False
+#     for i in range(3,int(math.sqrt(n))+1 ,2):
+#         if n%i == 0 :
+#             return False
+#     return True
                
 
-with open("number.txt","r") as file:
-     data = file.read()
-     count = 0
-     for i in data.split(","):
-         if isPrime(int(i)):
-             count+=1
-     print(count)    
+# with open("number.txt","r") as file:
+#      data = file.read()
+#      count = 0
+#      for i in data.split(","):
+#          if isPrime(int(i)):
+#              count+=1
+#      print(count)    
              
 
 
@@ -42,118 +42,168 @@ with open("number.txt","r") as file:
 
 
 
-======================  FIRST WAY  TO  SOLVE THIS QUESTION ===================
+# ======================  FIRST WAY  TO  SOLVE THIS QUESTION ===================
 
-def group_words_by_letter():
-    with open("words.txt",'r') as f:
-         data = f.read()
-         for g in data.split(","): #anggor
-             try:
-                with open(f"{g[0]}_words.txt", "r") as f:
-                    data2 = f.read()
-                    if data2[0] == g[0]:
-                        # for i in data2.split(","): # apple ,anar
-                            if g not in data2.split(","):  
-                                with open(f"{g[0]}_words.txt","a") as a:
-                                    a.write(","+g)
-             except FileNotFoundError:
-                    with open(f"{g[0]}_words.txt",'w') as f:
-                         f.write(g)
+# def group_words_by_letter():
+#     with open("words.txt",'r') as f:
+#          data = f.read()
+#          for g in data.split(","): #anggor
+#              try:
+#                 with open(f"{g[0]}_words.txt", "r") as f:
+#                     data2 = f.read()
+#                     if data2[0] == g[0]:
+#                         # for i in data2.split(","): # apple ,anar
+#                             if g not in data2.split(","):  
+#                                 with open(f"{g[0]}_words.txt","a") as a:
+#                                     a.write(","+g)
+#              except FileNotFoundError:
+#                     with open(f"{g[0]}_words.txt",'w') as f:
+#                          f.write(g)
                   
-group_words_by_letter()
+# group_words_by_letter()
                  
     
-====================== SECOND WAY  TO  SOLVE THIS QUESTION ===================
+# ====================== SECOND WAY  TO  SOLVE THIS QUESTION ===================
 
 
-def group_words_by_letter():
-    try:
-        with open("words.txt", 'r') as f:
-            words = f.read().strip().split(",")
-    except FileNotFoundError:
-        print("words.txt file nahi mili.")
-        return
+# def group_words_by_letter():
+#     try:
+#         with open("words.txt", 'r') as f:
+#             words = f.read().strip().split(",")
+#     except FileNotFoundError:
+#         print("words.txt file nahi mili.")
+#         return
 
-    for word in words:
-        word = word.strip()
-        if not word:
-            continue
-        filename = f"{word[0].lower()}_words.txt"
-        try:
-            with open(filename, 'r') as f:
-                existing_words = f.read().strip().split(",")
-        except FileNotFoundError:
-            existing_words = []
+#     for word in words:
+#         word = word.strip()
+#         if not word:
+#             continue
+#         filename = f"{word[0].lower()}_words.txt"
+#         try:
+#             with open(filename, 'r') as f:
+#                 existing_words = f.read().strip().split(",")
+#         except FileNotFoundError:
+#             existing_words = []
 
-        if word not in existing_words:
-            with open(filename, 'a' if existing_words else 'w') as f:
-                if existing_words:
-                    f.write("," + word)
-                else:
-                    f.write(word)
+#         if word not in existing_words:
+#             with open(filename, 'a' if existing_words else 'w') as f:
+#                 if existing_words:
+#                     f.write("," + word)
+#                 else:
+#                     f.write(word)
 
-group_words_by_letter()
-
-
-
-practise  
+# group_words_by_letter()
 
 
-def group_words_by_letter():
-     try:
-          with open("words.txt",'r') as f:
-               words = f.read().strip().split(",")
-     except FileNotFoundError:
-          print("Doesn't exists as such file!")
-          return
-     for word in words:
-        word =word.strip()
-        if not word:
-             print(" WORRD NAHI HAIN ")
-             continue
-        filename = f"{word[0].lower()}_words.txt"
-        try:
-             with open(filename,"r") as f:
-                  existance_words = f.read().split(",")
-        except:
-              existance_words =[]
-        if word not in existance_words:
-             with open(filename, "a" if existance_words else "w") as file:
-                  if existance_words:
-                       file.write(f",{word}")
-                  else:
-                       file.write(word)
-                       
-                       
-group_words_by_letter()
+
+# practise  
+
+
+# def group_words_by_letter():
+#      try:
+#           with open("words.txt",'r') as f:
+#                words = f.read().strip().split(",")
+#      except FileNotFoundError:
+#           print("Doesn't exists as such file!")
+#           return
+#      for word in words:
+#         word =word.strip()
+#         if not word:
+#              print(" WORRD NAHI HAIN ")
+#              continue
+#         filename = f"{word[0].lower()}_words.txt"
+#         try:
+#              with open(filename,"r") as f:
+#                   existance_words = f.read().split(",")
+#         except:
+#               existance_words =[]
+#         if word not in existance_words:
+#              with open(filename, "a" if existance_words else "w") as file:
+#                   if existance_words:
+#                        file.write(f",{word}")
+#                   else:
+#                        file.write(word)              
+# group_words_by_letter()
              
              
-def make_group_by_fletter():
-    try:
-        with open("words.txt",'r') as f:
-            words = f.read().strip().split(",")
-    except FileNotFoundError:
-         print("doennot exits as such file!")
+# def make_group_by_fletter():
+#     try:
+#         with open("words.txt",'r') as f:
+#             words = f.read().strip().split(",")
+#     except FileNotFoundError:
+#          print("doennot exits as such file!")
     
-    for word in words:
-        word =word.strip()
-        if not word:
-           continue
-        filename = f"{word[0].lower()}_words.txt"
-        try:
-            with open(filename,'r') as f :
-                 existance_word = f.read().split()
-        except:
-            existance_word = []
-        if word not in existance_word:
-            with open(filename, "a" if existance_word else "w") as f:
-               if existance_word:
-                   f.write_through(","+word)
-               else:
-                   f.write(word)
-                   
-            
-make_group_by_fletter()
+#     for word in words:
+#         word =word.strip()
+#         if not word:
+#            continue
+#         filename = f"{word[0].lower()}_words.txt"
+#         try:
+#             with open(filename,'r') as f :
+#                  existance_word = f.read().split()
+#         except:
+#             existance_word = []
+#         if word not in existance_word:
+#             with open(filename, "a" if existance_word else "w") as f:
+#                if existance_word:
+#                    f.write_through(","+word)
+#                else:
+#                    f.write(word)          
+# make_group_by_fletter()
+
+
+
+
+
+# Q# Folder data/ contains multiple .txt files with comma-separated integers.
+# Task:
+# Create a function sum_all_numbers() that:
+
+# Loops over each .txt file in the folder.
+
+# Sums all the integers across all files.
+
+# Prints total sum.
+
+
+
+# def sum_all_numbers():
+
+
+import os
+
+target_directory = "C:\Users\mohamil\Desktop\MHAMIL\PYTHON\PIAIC\py-teach\file-handle\data"
+
+for root, dirs, files in os.walk(target_directory):
+    # 'root' is the current directory being visited
+    # 'dirs' is a list of subdirectories in 'root'
+    # 'files' is a list of files in 'root'
+
+    print(f"Current directory: {root}")
+    print(f"Subdirectories: {dirs}")
+    print(f"Files: {files}")
+
+    for file_name in files:
+        file_path = os.path.join(root, file_name)
+        print(f"Processing file: {file_path}")
+        # Perform operations on the file here
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
