@@ -166,29 +166,24 @@
 # Prints total sum.
 
 
-
-# def sum_all_numbers():
-
-
 import os
 
-target_directory = "C:\Users\mohamil\Desktop\MHAMIL\PYTHON\PIAIC\py-teach\file-handle\data"
+def sum_all_numbers():
 
-for root, dirs, files in os.walk(target_directory):
-    # 'root' is the current directory being visited
-    # 'dirs' is a list of subdirectories in 'root'
-    # 'files' is a list of files in 'root'
-
-    print(f"Current directory: {root}")
-    print(f"Subdirectories: {dirs}")
-    print(f"Files: {files}")
-
-    for file_name in files:
-        file_path = os.path.join(root, file_name)
-        print(f"Processing file: {file_path}")
-        # Perform operations on the file here
-    
-
+    # Assign directory
+    directory = r"C:\Users\mohamil\Desktop\MHAMIL\PYTHON\PIAIC\py-teach\file-handle\data"
+    sum=0
+    # Iterate over files in directory
+    for name in os.listdir(directory):
+        if name.endswith(".txt"):
+            print(f"directory name is {name}")
+            with open(os.path.join(directory, name)) as f:
+                integer = f.read().split(",")
+                for i in integer:
+                    sum+=int(i)
+    print(f"your integer sun is {sum}")             
+            
+sum_all_numbers()
 
 
 
