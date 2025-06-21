@@ -168,29 +168,73 @@
 
 import os
 
-def sum_all_numbers():
+# def sum_all_numbers():
 
-    # Assign directory
-    directory = r"C:\Users\mohamil\Desktop\MHAMIL\PYTHON\PIAIC\py-teach\file-handle\data"
-    sum=0
-    # Iterate over files in directory
-    for name in os.listdir(directory):
-        if name.endswith(".txt"):
-            print(f"directory name is {name}")
-            with open(os.path.join(directory, name)) as f:
-                integer = f.read().split(",")
-                for i in integer:
-                    sum+=int(i)
-    print(f"your integer sun is {sum}")             
+#     # Assign directory
+#     directory = r"C:\Users\mohamil\Desktop\MHAMIL\PYTHON\PIAIC\py-teach\file-handle\data"
+#     sum=0
+#     # Iterate over files in directory
+#     for name in os.listdir(directory):
+#         if name.endswith(".txt"):
+#             print(f"directory name is {name}")
+#             with open(os.path.join(directory, name)) as f:
+#                 integer = f.read().split(",")
+#                 for i in integer:
+#                     sum+=int(i)
+#     print(f"your integer sun is {sum}")             
             
-sum_all_numbers()
+# sum_all_numbers()
 
 
 
 
+# Q5 Task:
+# Write a function validate_emails() that:
+# Reads emails from the file.
+# Validates format using regex.
+# Writes valid emails to valid_emails.txt.
+# Logs invalid ones to log.txt.
 
 
+def checkEmail(e):
+    if "@gmail.com" in e :
+       return True
+    else:
+        return False
 
+def validate_emails():
+      directory = r"C:\Users\mohamil\Desktop\MHAMIL\PYTHON\PIAIC\py-teach\file-handle"
+      with open(os.path.join(directory,"emails.txt"),"r") as f:
+        emails =f.read().split(",")
+
+      isFoundvalid = False
+      isFoundnonvalid = False
+      
+      for email  in emails:
+           isValidEmail = checkEmail(email)
+           try:
+               with open("valid_emails.txt" if isValidEmail else "logs.txt" ,"r") as f:
+                existancedata = f.read().strip().split(",") 
+                existancedata = [d.strip() for d in existancedata]
+           except:
+               existancedata =[]
+               
+           if email.strip() not in existancedata:
+                with open("valid_emails.txt" if isValidEmail else "logs.txt" ,"a") as f:
+                    if  isValidEmail:
+                        if isFoundvalid:
+                            f.write("," + email)
+                        else:
+                            f.write(email)
+                            isFoundvalid =True
+                    else:
+                        if isFoundnonvalid:
+                            f.write("," + email)
+                        else:
+                            f.write(email)
+                            isFoundnonvalid =True
+
+validate_emails()
 
 
 
