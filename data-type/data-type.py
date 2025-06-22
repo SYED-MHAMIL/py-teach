@@ -1,8 +1,11 @@
 num_int: int = 42
 
+
+
+
 # print(type(num_int)," num_int = ",num_int,)  
 
-
+print("hello world")
 
 
 
@@ -112,16 +115,16 @@ num_int: int = 42
 
 
 # import pickle
-import json 
-pickle ={
-     "dumps": lambda x: json.dumps(x) ,
-     "loads" :lambda x: json.loads(x)
-}
-obj = {"name": "Ali", "age": 25}
+# import json 
+# pickle ={
+#      "dumps": lambda x: json.dumps(x) ,
+#      "loads" :lambda x: json.loads(x)
+# }
+# obj = {"name": "Ali", "age": 25}
 
-# Convert (serialize) object to bytes
-b = bytearray(pickle["dumps"](obj))
-print(b)  # Now it's stored in byte format
+# # Convert (serialize) object to bytes
+# b = bytearray(pickle["dumps"](obj))
+# print(b)  # Now it's stored in byte format
 
 # Convert back (deserialize)
 # original_obj = pickle.loads(b)
