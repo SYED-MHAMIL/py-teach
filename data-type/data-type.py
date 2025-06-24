@@ -130,3 +130,8 @@ print("hello world")
 # original_obj = pickle.loads(b)
 # print(b)  # Output: {'name': 'Ali', 'age': 25}
 
+
+
+
+byte_data: bytes = b"Hello"
+print(type(byte_data), " byte_data = ", byte_data)  # <class 'bytes'>
