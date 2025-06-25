@@ -102,12 +102,36 @@ my_weight: float = 70.532000 # 70.536000
 #print(type((name, first_letter, age, my_weight)))
   
 # using % operator
-my_string: str = '''My name is %s, first letter of my name is \'%c\', I am %d years old and my weight id %f Kg.''' % (name, first_letter, age, my_weight)
-print(my_string)
+# my_string: str = '''My name is %s, first letter of my name is \'%c\', I am %d years old and my weight id %f Kg.''' % (name, first_letter, age, my_weight)
+# print(my_string)
 
-my_string = '''My name is %s, first letter of my name is \'%c\', I am %d years old and my weight id %.2f Kg.''' % (name, first_letter, age, my_weight) # Dont forget period %.2f
-print(my_string)
+# my_string = '''My name is %s, first letter of my name is \'%c\', I am %d years old and my weight id %.2f Kg.''' % (name, first_letter, age, my_weight) # Dont forget period %.2f
+# print(my_string)
 
 
-# Error: TypeError: %d format: a real number is required, not str
-my_string: str = '''My name is %s, first letter of my name is \'%c\', I am %d years old and my weight id %f Kg.''' % (my_weight, age,45, first_letter)
+# # Error: TypeError: %d format: a real number is required, not str
+# my_string: str = '''My name is %s, first letter of my name is \'%c\', I am %d years old and my weight id %f Kg.''' % (my_weight, age,45, first_letter)  
+
+
+
+# a = "this is a very long string"
+# b = "this is a very long string"
+# print(a is b)  # False (not interned)
+# print("id(a)", id(a))
+# print("id(b)", id(b))
+
+
+
+
+
+
+# prompt: print list of str functions using dir(), dont show function starting with"__"
+
+# Get the list of string methods
+sfilteredtring_methods: str = dir(str)
+
+# Filter out methods starting with "__"
+filtered_methods: str = [method for method in sfilteredtring_methods if not method.startswith("__")]
+
+# Print the  list
+print(filtered_methods)
