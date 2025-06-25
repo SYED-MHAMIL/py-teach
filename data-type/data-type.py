@@ -5,7 +5,7 @@ num_int: int = 42
 
 # print(type(num_int)," num_int = ",num_int,)  
 
-print("hello world")
+# print("hello world")
 
 
 
@@ -133,5 +133,134 @@ print("hello world")
 
 
 
-byte_data: bytes = b"Hello"
-print(type(byte_data), " byte_data = ", byte_data)  # <class 'bytes'>
+# byte_data: bytes = b"Hello"
+# print(type(byte_data), " byte_data = ", byte_data[0])  # <class 'bytes'>
+
+# decoded_text = byte_data.decode('utf-8')
+# print(decoded_text)
+# # text = "Hello"
+# # b = bytes(text, 'utf-8')  # Convert string to bytes
+# # print(b[1])  # Output: b'Hello'
+
+
+
+
+
+# d =bytearray(b"hello")
+# d[0]=34
+
+# print(d)
+
+# Open an image file in binary mode
+# with open("M.jpeg", "rb") as image_file:
+#         image_data = image_file.read()
+
+#         print(image_data)
+
+
+# with open("Apollo11.jpg", "rb") as source_file:
+#     data = source_file.read()
+
+# # Write the binary data to a new image file
+# with open("copy.jpg", "wb") as target_file:
+#     target_file.write(data)
+
+# print("Image copied successfully!")
+
+
+
+
+
+
+
+# # Creating a bytearray object
+# ba: bytearray = bytearray(b"hello")
+# print("Before: ba = ", ba)
+
+# # Modifying the bytearray
+# ba[0] = 72  # ASCII value of 'H'
+
+# print("After: ba = ",ba)  # Output: bytearray(b'Hello')
+
+
+
+
+
+#  +++++++++++++++++         MEMORYVIEW            ++++++++++++++++
+
+# mem_view: memoryview = (b"Operation Badar")
+# print(type(mem_view), " mem_view = ", mem_view)  # 
+# print(bytes(mem_view[0:4]))
+# print( mem_view[6:11] ) #cast it to byte otherwise it will show memory address
+
+
+
+
+
+# data = b"hello"
+# slice1 = data[0:3]
+# slice2 = data[0:3]
+# print(id(slice1))  # Different ID (new object)
+# print(id(slice2))
+# print(slice1 is slice2)  # False
+
+
+
+
+# None Data Type in Python
+# In Python, None is a special data type that represents the absence of a value or a null object reference. It is a singleton object, meaning that there is only one instance of None in the entire Python environment.
+
+
+# x: str = None
+# y: str = None
+# z: str = x
+
+# #display the data type of x:
+# print(type(x))                           # NONE
+# print("value of x = " + str(x) )         # string 
+# print("x == y = ", x == y)
+# print("id(x) = ", id(x))
+# print("id(y) = ", id(y))
+# print("id(z) = ", id(z))
+# print("x is y = ", x is y)
+# print("x is z = ", x is z)
+# print("id(x) is id(z) = ", id(x) is id(z)) # False :( why? you will get the answer in topic 'Integer Literals in Python'
+# print("id(x) == id(z) = ", id(x) == id(z)) # True
+
+
+
+x = 500   # object diff
+z = 500   # object diff
+y =x    # object same as  x
+
+#   -5 to 286 range as in integer if  outsite this range is always should reutrn false  
+# print(x is z)    # true
+# print(x is y)  #True  
+
+# ❌ Mistake in Code:
+# You're doing:
+
+
+# id(x) is id(y)
+# But id(x) returns an integer (memory address), so you're comparing two integers with is, which is not recommended.
+
+# 👉 Use == instead of is for comparing numbers/IDs:
+
+
+
+# print(id(x) == id(z))
+# print(500 is 500)
+
+
+a = 12
+b = 12
+c =  b
+
+# print(id(b) is id(a))
+# # print(type (id(x)))
+# print(id(100) is id(100))
+
+
+x = 1000
+y = 1000
+print(x is y)
