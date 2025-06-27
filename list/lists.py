@@ -86,3 +86,37 @@ numbers.sort()
 # print(e)
 
 
+
+
+# original = [[1, 2], [3, 4]]
+# shallow = original.copy()  # or list(original) or original[:]
+
+# shallow[0][0] = 99
+
+# print("Original:", original)
+# print("Shallow :", shallow)
+
+
+
+# nested = [1, [2, [3, [4, 5]], 6],7]
+
+
+# flatten = lambda lst:[x if isinstance(x,int) else flatten(x)  for x in lst]
+# print(flatten(nested))
+
+# [1, [2, [3, [4, 5]], 6], 7]
+
+
+a=[i for i in range(5)] * 2
+a[0]=80
+print(a)
+
+
+
+
+obj2 = {
+    (1,2,3) :  "name"
+}
+
+print(obj2)
+
