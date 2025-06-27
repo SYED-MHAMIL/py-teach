@@ -33,7 +33,7 @@ mat = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
 res = [n for upper in mat  for n in upper ]
 
-print(res)
+# print(res)
 
 
 
@@ -44,7 +44,7 @@ print(res)
 
 # Nested list comprehension
 matrix = [[n for n in range(5)] for i in range(5)]
-print(matrix)
+# print(matrix)
 
 
 
@@ -63,12 +63,12 @@ for mat in matrix:
     for m in mat:
         if m%2 != 0 :
            odd_numbers.append(m)
-print(odd_numbers)
+# print(odd_numbers)
 
 #    ===========   FROM LIST COMPREHENSIVE
 
 odd =[m for mat in matrix for m in mat if m%2 != 0]
-print(odd)
+# print(odd)
 
 
 
@@ -87,22 +87,35 @@ data = [
 
 
 
-import json
+# import json
 
-unique_data = list({json.dumps(d, sort_keys=True) for extract in data})
-unique_data = [json.loads(d) for d in unique_data]
-
-
-
-
-result  = [d["name"] for d in data if all( k >=50 for k in d["marks"].values() )] 
-result = [d["name"] for d in data if all(k >=50 for k in d["marks"].values())]
-# print(result)
+# unique_data = list({json.dumps(d, sort_keys=True) for extract in data})
+# unique_data = [json.loads(d) for d in unique_data]
 
 
 
-{"name": "Ali", "marks": {"Math": 60, "English": 55}},
-for  d in data: 
-     if all(k>50 for k in d["marks"].values()):
-          print(d["name"])
+
+# result  = [d["name"] for d in data if all( k >=50 for k in d["marks"].values() )] 
+# result = [d["name"] for d in data if all(k >=50 for k in d["marks"].values())]
+# # print(result)
+
+
+
+# {"name": "Ali", "marks": {"Math": 60, "English": 55}},
+# for  d in data: 
+#      if all(k>50 for k in d["marks"].values()):
+#           print(d["name"])
      
+
+
+
+     # Without if condition
+# squared: list = [x**2 for x in [1, 2, 3, 4, 5] if x>3] #  if x > 3 place this if condition and see
+# print(squared, " : ", type(squared))  # Output: [1, 4, 9, 16, 25]
+
+
+# print(squared)
+
+
+
+
