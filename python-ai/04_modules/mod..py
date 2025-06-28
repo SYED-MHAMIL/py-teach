@@ -149,3 +149,24 @@ def my_function(**student):
 
 
 
+
+# def greet_user(**kwargs):
+#     name = kwargs.get("name" , "Moahmil")
+#     print("Hello,", name)
+
+# greet_user(name="Maham")
+# greet_user()
+
+
+
+
+# def update_profile(**kwargs):
+#   default_value = {"name": "unkwon op"}
+#   default_value.update(kwargs)
+#   print(default_value)
+
+
+# update_profile(age= 12 ,country = "pakistan")
+
+
+
