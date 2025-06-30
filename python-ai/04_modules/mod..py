@@ -170,3 +170,25 @@ def my_function(**student):
 
 
 
+
+
+
+
+
+
+
+
+
+# ============     GENERATOR OBJECT      ============
+# def my_gen():
+#     yield 1
+#     yield 2
+#     yield 3
+
+
+# gen = ( x for x in range(5) )
+# print(type(gen))
+# # # Iterate over the generator
+# for value in gen:
+#     print(value, " : ", type(value))
+
