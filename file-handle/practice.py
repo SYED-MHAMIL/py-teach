@@ -202,39 +202,39 @@ def checkEmail(e):
     else:
         return False
 
-def validate_emails():
-      directory = r"C:\Users\mohamil\Desktop\MHAMIL\PYTHON\PIAIC\py-teach\file-handle"
-      with open(os.path.join(directory,"emails.txt"),"r") as f:
-        emails =f.read().split(",")
+# def validate_emails():
+#       directory = r"C:\Users\mohamil\Desktop\MHAMIL\PYTHON\PIAIC\py-teach\file-handle"
+#       with open(os.path.join(directory,"emails.txt"),"r") as f:
+#         emails =f.read().split(",")
 
-      isFoundvalid = False
-      isFoundnonvalid = False
+#       isFoundvalid = False
+#       isFoundnonvalid = False
       
-      for email  in emails:
-           isValidEmail = checkEmail(email)
-           try:
-               with open("valid_emails.txt" if isValidEmail else "logs.txt" ,"r") as f:
-                existancedata = f.read().strip().split(",") 
-                existancedata = [d.strip() for d in existancedata]
-           except:
-               existancedata =[]
+#       for email  in emails:
+#            isValidEmail = checkEmail(email)
+#            try:
+#                with open("valid_emails.txt" if isValidEmail else "logs.txt" ,"r") as f:
+#                 existancedata = f.read().strip().split(",") 
+#                 existancedata = [d.strip() for d in existancedata]
+#            except:
+#                existancedata =[]
                
-           if email.strip() not in existancedata:
-                with open("valid_emails.txt" if isValidEmail else "logs.txt" ,"a") as f:
-                    if  isValidEmail:
-                        if isFoundvalid:
-                            f.write("," + email)
-                        else:
-                            f.write(email)
-                            isFoundvalid =True
-                    else:
-                        if isFoundnonvalid:
-                            f.write("," + email)
-                        else:
-                            f.write(email)
-                            isFoundnonvalid =True
+#            if email.strip() not in existancedata:
+#                 with open("valid_emails.txt" if isValidEmail else "logs.txt" ,"a") as f:
+#                     if  isValidEmail:
+#                         if isFoundvalid:
+#                             f.write("," + email)
+#                         else:
+#                             f.write(email)
+#                             isFoundvalid =True
+#                     else:
+#                         if isFoundnonvalid:
+#                             f.write("," + email)
+#                         else:
+#                             f.write(email)
+#                             isFoundnonvalid =True
 
-validate_emails()
+# validate_emails()
 
 
 

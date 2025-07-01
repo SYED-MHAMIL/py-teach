@@ -148,6 +148,12 @@
 
 
 
+
+# in this exmaple following we saw what is cause chaning overwrite block skipped block 
+#  and  more you can check (if needed)
+
+
+
 def final_boss():
     try:
         x = 1/ 0
@@ -175,11 +181,124 @@ def final_boss():
 #         final_boss()
 #     finally:
 #         print("error ayega")
-
 # callERror()
 
+    
+
+
+
+# import random
+# from typing import Tuple, Dict, List
+# def random_number_GEnerate(num1:int)-> List[Tuple[int,int]] :
+#     try:
+#         if not isinstance(num1,int)  or num1<=0:
+#             raise ValueError("just integer is allowed other wise you can't my website")
+#         return [(random.randint(1,100),random.randint(1,100))   for _ in range(num1)]  
+           
+#     except ValueError as e:
+#         print(f"Error: {e}")
+#         return []
+#     except Exception as e:
+#         print(f"Error: unexpected error occured")
+#         return []
+    
+
+# print(random_number_GEnerate(10))
+
+
+class InvalidOperator(Exception):
+      def __init__(self,message):
+          super().__init__(message)
+          
+          
+          
+
+
+   
+def calculator():
+    """WElCOME TO OVER BASICS ERROR HANDLING
+       CALCULATOR
+    """
+    while True:
+        try:
+            num =float(input("enter the num 1"))
+            
+            opearater =input("give operaotr and q to exit")
+            if opearater == "q":
+                return "exit"
+                break
+            if not  opearater in ("/","*","+","-"):
+                raise InvalidOperator(f"just this operation (/,*,+,-) is allowed")
+                    
+            num2 =float(input("enter the num 2"))
+            
+            if opearater == "+":
+                result = num +num2
+                return result
+            elif opearater == "-":
+                result = num -num2
+                return result 
+            elif opearater == "*":
+                result = num *num2
+                return result 
+            else:    
+                if num2 == 0:
+                    raise ZeroDivisionError("Division by zero")
+                result = num /num2
+                return result
         
 
+        except InvalidOperator as i:
+              print(f"ERROR {i}")
+
+        except ZeroDivisionError as e:
+                print(f"ERROR :{e}")
+                continue                    
+        except ValueError as e:
+            print(f"ERROR : {e}")
+            continue
+                       
+        except KeyboardInterrupt as e:
+            print(f"ERROR : your progrma is somthing going wrong{e}")
+            break
+        finally:
+            print("thnak for use calcultor")        
+         
+                   
+            
+    
+       
+print(calculator())
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#     ================        Want to Finish 100%?            ===============
+
+
+# Let me know if you'd like short lessons or examples on:
+
+# 📜 Logging errors to file (instead of just printing)
+
+# 📉 Getting full traceback programmatically
