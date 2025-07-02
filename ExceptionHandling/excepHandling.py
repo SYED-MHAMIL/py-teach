@@ -292,19 +292,24 @@ allowed_operation = {
 def eval_expression(node):
     try:
         if isinstance(node,ast.Expression):
-           return  eval_expression(node.body) # "3343 * 3 * 8" 
+           return  eval_expression(node.body) # "3343 * 3 * 8"  or  "-3 +1"
         elif isinstance(node,ast.BinOp):
             left = eval_expression(node.left)  # 3 * 8  agin call fun and got 24 and 24 * 33343
             right = eval_expression(node.right)  # 33343
             op_type =type(node.op)
-            print(f"type of  {op_type}")
-            print(f'operaiton  {node.op}')
-
             if op_type in allowed_operation:
                 return allowed_operation[op_type](left,right)
             else:
                 raise TypeError(f"Unsupported operator you have given is {op_type}")
     
+        elif isinstance(node,ast.UnaryOp):
+             operater =eval_expression(node.operand)     
+             un_type = type(node.op)
+             if un_type in allowed_operation:
+                 return allowed_operation[un_type](operater)
+             else:
+                   raise TypeError(f"Unsupported unary operator type {type(node)}")
+                 
         elif isinstance(node,ast.Constant):
             return node.value
         else: 
@@ -315,11 +320,6 @@ def eval_expression(node):
     except Exception as e:
         logging.error(f"ERROR: {e}")
         
-
-
-
-
-
 
 
 
@@ -335,12 +335,6 @@ def calculator():
             break
         else:
             print(f"Reslut : {result}")
-
-    
-
-    
-         
-                   
             
     
        
