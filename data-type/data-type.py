@@ -291,3 +291,66 @@ print(data)       # bytearray(b'hello') ← original not changed
 # view[0] = 88
 # print(bytes(view))   # its just view not a copy
 # print(bytes(mem))
+
+
+
+
+
+#  Why is it efficient?
+# No copying = saves time and memory.
+
+# You can handle large binary data (e.g., video, files) without loading full copies into memory.
+
+# Let me know if you 
+
+
+
+
+
+# print("""Variable x, y & z have 'None' value, as we know that 'None' is a singleton object,
+# meaning that there is only one instance of `None` in the entire Python environment.
+# So the id(x), id(y) & id(z) represents the same object id in memory.\n""")
+
+# x: str = None
+# y: str = None
+# z: str = x
+
+# print("ID of variable x  = " + str(id(x)))
+# print("ID of variable y  = " + str(id(y)))
+# print("ID of variable z  = " + str(id(z)))
+# print(f"compresssion two varible that has kept same refernce :{x is y}")
+# print("\nIs variable x & y shares the same memory space? \nThe answer is: " + str(id(x) == id(y)))
+
+
+
+
+# x: int = 2418526378384
+# y: int = 2418526378384
+# z: int = x
+
+
+
+# print("Value of x = " + str(x) + ", and id(x) = " + str(id(x))) # when you need to concatinate any thing with string you need to first cast it to str()
+# print("Value of y = " + str(y) + ", and id(y) = " + str(id(y)))
+# print("Value of z = " + str(z) + ", and id(z) = " + str(id(z)))
+# print("id(x) == id(y) = ", id(x) == id(y) )
+# print("id(x) is id(y) = ", id(x) is id(y) ) # ;)
+# print("id(x) is id(y) = ", 2418526378384 is 2418526378384 ) # ;)
+
+
+# print(3000 is 3000)
+# a = 10045632   # object in memory A
+# b = 10045632   # another object in memory B
+# print(a is b)
+
+
+
+# print(text)  # Output: Hello
+
+
+nums = [72, 101, 108, 108, 111]
+data = bytearray(nums
+                 )
+text = data.decode('utf-8')           #
+print(text)
+
