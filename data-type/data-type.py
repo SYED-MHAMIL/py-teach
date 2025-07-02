@@ -252,15 +252,42 @@ y =x    # object same as  x
 # print(500 is 500)
 
 
-a = 12
-b = 12
-c =  b
+# a = 12
+# b = 12
+# c =  b
 
 # print(id(b) is id(a))
 # # print(type (id(x)))
 # print(id(100) is id(100))
 
 
-x = 1000
-y = 1000
-print(x is y)
+# x = 1000
+# y = 1000
+# print(x is y)
+
+
+
+
+# =====================   MEMORY  VIEW  vs BYTES,BYTESARRAY    ==================
+
+
+
+
+# BYTE ARRAY
+
+data = bytearray(b'HelloStart')
+slice_copy = data[0:2]  # creates a NEW copy: b'ell'
+slice_copy[1] =88      # changes the copy, not the original
+print(slice_copy)
+print(data)       # bytearray(b'hello') ← original not changed
+
+
+
+
+# MEMORY VIEW
+# data = bytearray(b'Hellokarachi')
+# mem = memoryview(data)
+# view = mem[4:8]
+# view[0] = 88
+# print(bytes(view))   # its just view not a copy
+# print(bytes(mem))

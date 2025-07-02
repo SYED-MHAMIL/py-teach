@@ -236,7 +236,10 @@ def checkEmail(e):
 
 # validate_emails()
 
-
+# Open an image file in binary mode
+with open("mhamil.txt", "rb") as image_file:
+    image_data = image_file.read()
+    print(image_data.decode('utf-8'))
 
 
 
