@@ -212,66 +212,139 @@ class InvalidOperator(Exception):
           
           
           
-
+# import logging
 
    
+# def calculator():
+#     """WElCOME TO OVER BASICS ERROR HANDLING
+#        CALCULATOR
+#     """
+#     while True:
+#         try:
+#             num =float(input("enter the num 1"))
+#             opearater =input("give operaotr and q to exit")
+#             if opearater == "q":
+#                 break
+#             if not  opearater in ("/","*","+","-"):
+#                 raise InvalidOperator(f"just this operation (/,*,+,-) is allowed")
+                    
+#             num2 =float(input("enter the num 2"))
+            
+#             if opearater == "+":
+#                 result = num +num2
+#                 return result
+#             elif opearater == "-":
+#                 result = num -num2
+#                 return result 
+#             elif opearater == "*":
+#                 result = num *num2
+#                 return result 
+#             else:    
+#                 if num2 == 0:
+#                     raise ZeroDivisionError("Division by zero")
+#                 result = num /num2
+#                 return result
+        
+
+#         except InvalidOperator as i:
+#              logging.warning(f"ERROR {i}")
+#         except ZeroDivisionError as e:
+#              logging.warning(f"ERROR {e}")
+#              continue                    
+#         except ValueError as e:    
+#             logging.warning(f"ERROR {e}")
+#             continue
+                       
+#         except KeyboardInterrupt as e:
+#             logging.critical(f"ERROR : your progrma is somthing going wrong{e}")
+#             break
+#         finally:
+#             logging.info("thnak for use calcultor")        
+         
+                   
+            
+    
+       
+# print(calculator())
+
+
+
+
+
+
+
+
+
+# ADVANCE
+
+import logging
+import ast
+import operator
+allowed_operation = {
+     ast.Add : operator.add ,
+     ast.Sub :operator.sub,
+     ast.Mult : operator.mul,
+     ast.Pow : operator.pow,
+     ast.USub :operator.neg 
+}
+
+
+def eval_expression(node):
+    try:
+        if isinstance(node,ast.Expression):
+           return  eval_expression(node.body) # "3343 * 3 * 8" 
+        elif isinstance(node,ast.BinOp):
+            left = eval_expression(node.left)  # 3 * 8  agin call fun and got 24 and 24 * 33343
+            right = eval_expression(node.right)  # 33343
+            op_type =type(node.op)
+            print(f"type of  {op_type}")
+            print(f'operaiton  {node.op}')
+
+            if op_type in allowed_operation:
+                return allowed_operation[op_type](left,right)
+            else:
+                raise TypeError(f"Unsupported operator you have given is {op_type}")
+    
+        elif isinstance(node,ast.Constant):
+            return node.value
+        else: 
+            raise TypeError(f"Unsupported expression type {type(node)}")
+    except TypeError as e:
+        logging.error(f"ERROR: {e}")
+
+    except Exception as e:
+        logging.error(f"ERROR: {e}")
+        
+
+
+
+
+
+
+
+
 def calculator():
     """WElCOME TO OVER BASICS ERROR HANDLING
        CALCULATOR
     """
     while True:
-        try:
-            num =float(input("enter the num 1"))
-            
-            opearater =input("give operaotr and q to exit")
-            if opearater == "q":
-                return "exit"
-                break
-            if not  opearater in ("/","*","+","-"):
-                raise InvalidOperator(f"just this operation (/,*,+,-) is allowed")
-                    
-            num2 =float(input("enter the num 2"))
-            
-            if opearater == "+":
-                result = num +num2
-                return result
-            elif opearater == "-":
-                result = num -num2
-                return result 
-            elif opearater == "*":
-                result = num *num2
-                return result 
-            else:    
-                if num2 == 0:
-                    raise ZeroDivisionError("Division by zero")
-                result = num /num2
-                return result
-        
-
-        except InvalidOperator as i:
-              print(f"ERROR {i}")
-
-        except ZeroDivisionError as e:
-                print(f"ERROR :{e}")
-                continue                    
-        except ValueError as e:
-            print(f"ERROR : {e}")
-            continue
-                       
-        except KeyboardInterrupt as e:
-            print(f"ERROR : your progrma is somthing going wrong{e}")
+        exp = input("")
+        tree = ast.parse(exp,mode="eval")
+        result = eval_expression(tree)
+        if result == "q":
             break
-        finally:
-            print("thnak for use calcultor")        
+        else:
+            print(f"Reslut : {result}")
+
+    
+
+    
          
                    
             
     
        
 print(calculator())
-
-
-
 
 
 
