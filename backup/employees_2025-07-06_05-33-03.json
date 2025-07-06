@@ -1,0 +1,25 @@
+{
+  "departments": {
+    "engineering": [
+      [
+        {
+          "emp_id": "123",
+          "name": "Mohamil",
+          "email": "mohamil@gmail.com",
+          "salary": "1000000000"
+        }
+      ]
+    ],
+    "hr": [
+      [
+        {
+          "emp_id": "1234",
+          "name": "faiz",
+          "email": "faiz@gmail.com",
+          "salary": "$100000000"
+        }
+      ]
+    ],
+    "marketing": []
+  }
+}

@@ -1,0 +1,183 @@
+Starting processing...
+engineering.txt: 1 lines read
+hr.txt: 1 lines read
+marketing.txt: 1 lines read
+Invalid email: zainu@gmail in marketing.txt
+Valid entries written: 2
+Processing complete. Backups created.
+Starting processing...
+engineering.txt: 1 lines read
+hr.txt: 1 lines read
+marketing.txt: 1 lines read
+Invalid email: zainu@gmail in marketing.txt
+Valid entries written: 2
+Processing complete. Backups created.
+Starting processing...
+engineering.txt: 1 lines read
+hr.txt: 1 lines read
+marketing.txt: 1 lines read
+Invalid email: zainu@gmail in marketing.txt
+Valid entries written: 2
+Processing complete. Backups created.
+Starting processing...
+engineering.txt: 1 lines read
+hr.txt: 1 lines read
+marketing.txt: 1 lines read
+Invalid email: zainu@gmail in marketing.txt
+Valid entries written: 2
+Processing complete. Backups created.
+Starting processing...
+engineering.txt: 1 lines read
+hr.txt: 1 lines read
+marketing.txt: 1 lines read
+Invalid email: zainu@gmail in marketing.txt
+Valid entries written: 2
+Processing complete. Backups created.
+Starting processing...
+engineering.txt: 1 lines read
+hr.txt: 1 lines read
+marketing.txt: 1 lines read
+Invalid email: zainu@gmail in marketing.txt
+Valid entries written: 2
+Processing complete. Backups created.
+Starting processing...
+engineering.txt: 1 lines read
+hr.txt: 1 lines read
+marketing.txt: 1 lines read
+Invalid email: zainu@gmail in marketing.txt
+Valid entries written: 2
+Processing complete. Backups created.
+Starting processing...
+engineering.txt: 1 lines read
+hr.txt: 1 lines read
+marketing.txt: 1 lines read
+Invalid email: zainu@gmail in marketing.txt
+Valid entries written: 2
+Processing complete. Backups created.
+Starting processing...
+engineering.txt: 1 lines read
+hr.txt: 1 lines read
+marketing.txt: 1 lines read
+Invalid email: zainu@gmail in marketing.txt
+Valid entries written: 2
+Processing complete. Backups created.
+Starting processing...
+engineering.txt: 1 lines read
+hr.txt: 1 lines read
+marketing.txt: 1 lines read
+Invalid email: zainu@gmail in marketing.txt
+Valid entries written: 2
+Processing complete. Backups created.
+Starting processing...
+engineering.txt: 1 lines read
+hr.txt: 1 lines read
+marketing.txt: 1 lines read
+Invalid email: zainu@gmail in marketing.txt
+Valid entries written: 2
+Processing complete. Backups created.
+Starting processing...
+engineering.txt: 1 lines read
+hr.txt: 1 lines read
+marketing.txt: 1 lines read
+Invalid email: zainu@gmail in marketing.txt
+Valid entries written: 2
+Processing complete. Backups created.
+Starting processing...
+engineering.txt: 1 lines read
+hr.txt: 1 lines read
+marketing.txt: 1 lines read
+Invalid email: zainu@gmail in marketing.txt
+Valid entries written: 2
+Processing complete. Backups created.
+Starting processing...
+engineering.txt: 1 lines read
+hr.txt: 1 lines read
+marketing.txt: 1 lines read
+Invalid email: zainu@gmail in marketing.txt
+Valid entries written: 2
+Processing complete. Backups created.
+Starting processing...
+engineering.txt: 1 lines read
+hr.txt: 1 lines read
+marketing.txt: 1 lines read
+Invalid email: zainu@gmail in marketing.txt
+Valid entries written: 2
+Processing complete. Backups created.
+Starting processing...
+engineering.txt: 1 lines read
+hr.txt: 1 lines read
+marketing.txt: 1 lines read
+Invalid email: zainu@gmail in marketing.txt
+Valid entries written: 2
+Processing complete. Backups created.
+Starting processing...
+engineering.txt: 1 lines read
+hr.txt: 1 lines read
+marketing.txt: 1 lines read
+Invalid email: zainu@gmail in marketing.txt
+Valid entries written: 2
+Processing complete. Backups created.
+Starting processing...
+engineering.txt: 1 lines read
+hr.txt: 1 lines read
+marketing.txt: 1 lines read
+Invalid email: zainu@gmail in marketing.txt
+Valid entries written: 2
+Processing complete. Backups created.
+Starting processing...
+engineering.txt: 1 lines read
+hr.txt: 1 lines read
+marketing.txt: 1 lines read
+Invalid email: zainu@gmail in marketing.txt
+Valid entries written: 2
+Processing complete. Backups created.
+Starting processing...
+engineering.txt: 1 lines read
+hr.txt: 1 lines read
+marketing.txt: 1 lines read
+Invalid email: zainu@gmail in marketing.txt
+Valid entries written: 2
+Processing complete. Backups created.
+Starting processing...
+engineering.txt: 1 lines read
+hr.txt: 1 lines read
+marketing.txt: 1 lines read
+Invalid email: zainu@gmail in marketing.txt
+Valid entries written: 2
+Processing complete. Backups created.
+Starting processing...
+engineering.txt: 1 lines read
+hr.txt: 1 lines read
+marketing.txt: 1 lines read
+Invalid email: zainu@gmail in marketing.txt
+Valid entries written: 2
+Processing complete. Backups created.
+Starting processing...
+engineering.txt: 1 lines read
+hr.txt: 1 lines read
+marketing.txt: 1 lines read
+Invalid email: zainu@gmail in marketing.txt
+Valid entries written: 2
+Processing complete. Backups created.
+Starting processing...
+engineering.txt: 1 lines read
+hr.txt: 1 lines read
+marketing.txt: 1 lines read
+Invalid email: zainu@gmail in marketing.txt
+Valid entries written: 2
+Processing complete. Backups created.
+Starting processing...
+engineering.txt: 1 lines read
+hr.txt: 1 lines read
+marketing.txt: 1 lines read
+Invalid email: zainu@gmail in marketing.txt
+Valid entries written: 2
+Processing complete. Backups created.
+Starting processing...
+engineering.txt: 1 lines read
+hr.txt: 1 lines read
+marketing.txt: 1 lines read
+Invalid email: zainu@gmail in marketing.txt
+Valid entries written: 2
+Processing complete. Backups created.
+the file is read 1the file is read 1the file is read 1 in valid email please put valid all employies added :2the file is read 1the file is read 1the file is read 1 in valid email please put valid all employies added :2the file is read 1the file is read 1the file is read 1 in valid email please put valid all employies added :2the file is read 1the file is read 1the file is read 1 in valid email please put valid all employies added :2the file is read 1the file is read 1the file is read 1 in valid email please put valid all employies added :2the file is read 1the file is read 1the file is read 1 in valid email please put valid all employies added :2
