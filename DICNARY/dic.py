@@ -133,7 +133,7 @@ Note: These projections are based on various assumptions, including the pace of 
      
 
 
-words_count = {}
+# words_count = {}
 
 # for c in sentence.split():
 #     if c in words_count:
@@ -143,9 +143,7 @@ words_count = {}
 
 # # print(words_count)
 
-
 # sortedWord = dict(sorted(words_count.items(),key=lambda item:item[1]))
-
 # print(sortedWord)
 
 
