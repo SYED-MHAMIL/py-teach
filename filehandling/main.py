@@ -36,6 +36,138 @@
 
 
 
+# ===========================    project start  ====================================
+# ==========================                    ====================================
+
+
+import os
+from pathlib import Path
+import json
+
+# Using os module
+
+ 
+
+def email_validate(email):
+    if '@' in email and '.' in email:
+        return True 
+    else:
+        return False
+
+def validate_salary(salary):
+    s = salary.replace('$',"")
+    if s.isdigit():
+        return True 
+    else:
+        return False
+        
+
+def log(msg):
+    with open('logs.txt','a') as f:
+         f.write(f'\n{msg}') 
+
+def main():
+    current_working_directory_os = os.getcwd()
+    script_directory_os = os.path.dirname(os.path.abspath(__file__))
+    folder =  f"{script_directory_os}\\data"
+    filelist  = os.listdir(folder)
+    remove_dup = set()
+    all_emloyess = []
+    departments = {}
+    
+    filelist = [f for f in  filelist if f.endswith('txt')]    
+    for file in filelist:
+        
+        department_name = file.replace(".txt","")
+        departments[department_name]=[]
+        print("file=>"+file)
+        with open(os.path.join(folder,file),'r') as f:
+            lines = f.readlines()
+            print(lines)
+            for line in lines:
+                line= line.strip()
+                emp_id,name,email,salary = line.split(",")
+                if not email_validate(email):
+                   log("invalid email")
+                   continue
+                if not validate_salary(salary):
+                    log("invalid salary")
+                    continue
+                indenty = (emp_id,email)
+                if indenty in remove_dup:
+                    log('duplicate remove')
+                    continue
+                else:
+                    remove_dup.add(indenty)
+                departments[department_name].append({"id":emp_id, "name":name,"email":email,"salary":salary})
+                cleaned_data =[department_name,emp_id,name,email,salary]
+                all_emloyess.append(cleaned_data)
+    import csv
+
+    try:
+        with open(os.path.join(folder,'all_employees_cleaned.csv'),'r') as f:
+            f.readline()
+            csvfile_exsits =[c.strip().split(',') for c in f.readlines() if not c == "\n"]
+            print(f"csv exites is {csvfile_exsits} ")
+            print(f"csv data is {all_emloyess} ")
+    except FileNotFoundError:
+        csvfile_exsits = []
+    if not csvfile_exsits == all_emloyess :
+        with open(os.path.join(folder,'all_employees_cleaned.csv'), 'w') as file:
+                writer = csv.writer(file)
+                writer.writerow(['department','employess_id','name','email','salary']) 
+                writer.writerows(all_emloyess)
+                log("CSV WRITE SUCCESFULLLY")
+
+
+
+
+    with open(os.path.join(folder,'employees.json'),'w') as f:
+         json.dump({"departments":departments},f,indent=2)
+
+        
+                                
+
+                
+                
+            
+main()
+
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ===========================    project end ====================================
+
+
+
+
+
+
+
+
+
+
 
 # def checkEmail(email):
 #     for a in email:
@@ -109,7 +241,9 @@
 
 # try:
 #     with open(f"{folder}\employees.json","r") as j:
-#         json_file = json.loads(j.read())
+#         json_file = j.read()
+#         if json_file:
+#             json_file = json.load(json_file,j)
 #         print("csv file ::::::::::"+csv_file)   
 # except FileNotFoundError as e:
 #     json_file= []

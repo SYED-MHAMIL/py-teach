@@ -198,7 +198,7 @@ def main():
                         log(f"duplicate remove")
                         continue
                     copy.add(indentity)
-                    cleaned_data = [emp_id,name, email,salary]
+                    cleaned_data = [department_name,emp_id,name, email,salary]
                     all_employees.append(cleaned_data)
                     departments[department_name].append({
                         "employee_id" :emp_id,

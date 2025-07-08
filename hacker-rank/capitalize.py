@@ -20,19 +20,19 @@ sttr = " syed    mhamil    ali"
 # print(sttr)   
 # 
 
-result=""
-capitalized = True
-for char in sttr:
-    if char == " ":
-        result+=char
-        capitalized= True
-    elif capitalized:
-        result+=char.upper()
-        capitalized =False
-    else:
-        result+=char 
+# result=""
+# capitalized = True
+# for char in sttr:
+#     if char == " ":
+#         result+=char
+#         capitalized= True
+#     elif capitalized:
+#         result+=char.upper()
+#         capitalized =False
+#     else:
+#         result+=char 
     
-print(f"the result is just first letter capital: {result}")
+# print(f"the result is just first letter capital: {result}")
 
 
 

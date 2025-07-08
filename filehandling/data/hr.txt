@@ -1,1 +1,2 @@
 1234,faiz,faiz@gmail.com,$100000000
+1234,zaid,zaid@gmail.com,$100000000

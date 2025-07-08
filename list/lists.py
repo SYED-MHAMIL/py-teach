@@ -114,9 +114,19 @@ print(a)
 
 
 
-obj2 = {
-    (1,2,3) :  "name"
-}
+# obj2 = {
+#     (1,2,3) :  "name"
+# }
 
-print(obj2)
+# print(obj2)
 
+
+
+d=['\n', 'engineering,123,Mohamil,mohamil@gmail.com,1000000000\n', '\n', 'hr,1234,faiz,faiz@gmail.com,$100000000\n', '\n']
+
+a = [[c.strip()] for c in d if not c == "\n"]
+
+# for c in d :
+#     if not c == "\n":
+#        a.ap()
+print(a)
