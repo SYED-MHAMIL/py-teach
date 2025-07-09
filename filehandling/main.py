@@ -43,10 +43,22 @@
 import os
 from pathlib import Path
 import json
+from datetime import datetime
+import shutil
 
+script_directory_os = os.path.dirname(os.path.abspath(__file__))
 # Using os module
-
+folder = os.path.join(script_directory_os,'data')
+CLEANED_CSV = os.path.join(folder,"all_employees_cleaned.csv")
+JSON_FILE = os.path.join(folder,"employees.json")
+BACKUP_DIR = os.path.join(folder,"backup")
  
+def Back_up():
+    if not os.path.exists(BACKUP_DIR):
+       os.makedirs(BACKUP_DIR) 
+    timestamp = datetime.now().strftime("%Y-%M-%d_%H-%M-%S")
+    shutil.copy(CLEANED_CSV,f'{BACKUP_DIR}/all_employees_cleaned_{timestamp}.csv')
+    shutil.copy(JSON_FILE,f'{BACKUP_DIR}/employees_{timestamp}.json')
 
 def email_validate(email):
     if '@' in email and '.' in email:
@@ -62,14 +74,12 @@ def validate_salary(salary):
         return False
         
 
+
 def log(msg):
     with open('logs.txt','a') as f:
-         f.write(f'\n{msg}') 
+         f.write(f'\n{msg}')    
 
 def main():
-    current_working_directory_os = os.getcwd()
-    script_directory_os = os.path.dirname(os.path.abspath(__file__))
-    folder =  f"{script_directory_os}\\data"
     filelist  = os.listdir(folder)
     remove_dup = set()
     all_emloyess = []
@@ -119,18 +129,20 @@ def main():
                 writer.writerows(all_emloyess)
                 log("CSV WRITE SUCCESFULLLY")
 
-
-
-
-    with open(os.path.join(folder,'employees.json'),'w') as f:
-         json.dump({"departments":departments},f,indent=2)
+    with open(os.path.join(folder,'employees.json'),'r') as f:
+         exist_empoyess =json.load(f)
+         exist_empoyess =exist_empoyess['departments'] 
+         print(f"exists employess ---->>>{exist_empoyess}")
+         print(f"all employess ---->>>{departments}")
+         
+    if not departments == exist_empoyess: 
+        with open(os.path.join(folder,'employees.json'),'w') as f:
+             json.dump({"departments":departments},f,indent=2)
+             log("employees.json runs")
 
         
                                 
-
-                
-                
-            
+    Back_up()       
 main()
 
     

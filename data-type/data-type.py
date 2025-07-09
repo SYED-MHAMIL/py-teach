@@ -348,9 +348,27 @@ print(data)       # bytearray(b'hello') ← original not changed
 # print(text)  # Output: Hello
 
 
-nums = [72, 101, 108, 108, 111]
-data = bytearray(nums
-                 )
-text = data.decode('utf-8')           #
-print(text)
+# nums = [72, 101, 108, 108, 111]
+# data = bytearray(nums
+#                  )
+# text = data.decode('utf-8')           #
+# print(text)
 
+
+
+
+
+
+
+
+
+# ============================  dataTYpe practise         =============
+
+
+
+def func(x=[]):
+    x.append(1)
+    return x
+
+print(func())
+print(func())
