@@ -14,15 +14,14 @@
         "name": "faiz",
         "email": "faiz@gmail.com",
         "salary": "$100000000"
-      }
-    ],
-    "marketing": [
+      },
       {
         "id": "1234",
-        "name": "zain",
-        "email": "zainu@gmail.io",
-        "salary": "20000"
+        "name": "zaid",
+        "email": "zaid@gmail.com",
+        "salary": "$100000000"
       }
-    ]
+    ],
+    "marketing": []
   }
 }

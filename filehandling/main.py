@@ -41,10 +41,10 @@
 
 
 import os
-from pathlib import Path
 import json
 from datetime import datetime
 import shutil
+import re
 
 script_directory_os = os.path.dirname(os.path.abspath(__file__))
 # Using os module
@@ -61,23 +61,26 @@ def Back_up():
     shutil.copy(JSON_FILE,f'{BACKUP_DIR}/employees_{timestamp}.json')
 
 def email_validate(email):
-    if '@' in email and '.' in email:
-        return True 
+    pattern = r'^[\w\.-]+@[\w\.-]+\.\w{2,}$'
+    if  re.fullmatch(pattern,email):
+        return True     
     else:
         return False
 
 def validate_salary(salary):
     s = salary.replace('$',"")
-    if s.isdigit():
-        return True 
-    else:
+    try:
+         float(s)
+         return True 
+    except ValueError:
         return False
         
-
-
 def log(msg):
     with open('logs.txt','a') as f:
-         f.write(f'\n{msg}')    
+         f.write(f'\n{msg}')   
+
+
+ 
 
 def main():
     filelist  = os.listdir(folder)

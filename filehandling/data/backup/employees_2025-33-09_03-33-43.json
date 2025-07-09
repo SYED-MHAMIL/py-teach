@@ -14,6 +14,12 @@
         "name": "faiz",
         "email": "faiz@gmail.com",
         "salary": "$100000000"
+      },
+      {
+        "id": "1234",
+        "name": "zaid",
+        "email": "zaid@gmail.com",
+        "salary": "$100000000"
       }
     ],
     "marketing": [

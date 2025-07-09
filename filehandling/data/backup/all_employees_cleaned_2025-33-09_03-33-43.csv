@@ -1,4 +1,5 @@
 department,employess_id,name,email,salary
 engineering,123,Mohamil,mohamil@gmail.com,1000000000
 hr,1234,faiz,faiz@gmail.com,$100000000
+hr,1234,zaid,zaid@gmail.com,$100000000
 marketing,1234,zain,zainu@gmail.io,20000
