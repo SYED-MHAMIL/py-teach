@@ -173,8 +173,8 @@ num_int: int = 42
 
 
 
-# # Creating a bytearray object
-# ba: bytearray = bytearray(b"hello")
+#  Creating a bytearray object
+#  ba: bytearray = bytearray(b"hello") -->
 # print("Before: ba = ", ba)
 
 # # Modifying the bytearray
