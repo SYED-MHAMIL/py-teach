@@ -116,9 +116,18 @@
 
 
 
+# The name starts with __ and ends with the same considering special methods in Python. Python provides these methods to use as the operator overloading depending on the user. Python provides this convention to differentiate between the user-defined function with the module's function 
 
 
 
+# *****************   ERROR BECAUSE  __init__() is not functip
+
+class Myclass():
+    def __der__(a,b):
+        return a*b
+
+b = Myclass()
+print(b.__der__(3,4))
 
 
 # class MyClass:
