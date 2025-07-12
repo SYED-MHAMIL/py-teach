@@ -366,9 +366,16 @@ print(data)       # bytearray(b'hello') ← original not changed
 
 
 
-def func(x=[]):
-    x.append(1)
-    return x
+# def func(x=[]):
+#     x.append(1)
+#     return x
 
-print(func())
-print(func())
+# print(func())
+# print(func())
+
+
+
+
+x: int, y: float, z: str = 1, 2.5, "Python" # Using type hints while assigning mutiple variables simultaneously cause and error invalid syntax
+
+print(y, z)
