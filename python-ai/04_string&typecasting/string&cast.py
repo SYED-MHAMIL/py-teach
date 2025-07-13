@@ -134,4 +134,54 @@ sfilteredtring_methods: str = dir(str)
 filtered_methods: str = [method for method in sfilteredtring_methods if not method.startswith("__")]
 
 # Print the  list
-print(filtered_methods)
+# print(filtered_methods)
+
+
+name: str = 'John'
+age: int = 20
+first_letter: str = name[0]
+my_weight: float = 70.532000 # 70.536000
+
+#uncomment to see type
+#print(type((name, first_letter, age, my_weight)))
+
+# using % operator    
+# my_string: str ='My name is %s, first letter of my name is \'%c\', I am %d years old and my weight id %f Kg.' % (name, first_letter, age, "DASdsa")
+# print(my_string)
+
+# my_string = '''My name is %s, first letter of my name is \'%c\', I am %d years old and my weight id %.2f Kg.''' % (name, first_letter, age, my_weight) # Dont forget period %.2f
+# print(my_string)
+
+
+
+
+
+# using str.format()
+
+
+# my_string: str = 'My name is {} and I am {} years old.'.format(age, name) #order matters
+# print("line 1: ",my_string)
+
+# my_string: str = 'My name is {1} and I am {0} years old.'.format(age, name) #use indexing
+# print("line 2: ",my_string)
+
+
+# my_str = 'my name is {} abd i am {} year'.format(34,'mhamil')
+# my_str1 = 'my name is {1} abd i am {0} year'.format(34,'mhamil')
+# print(my_str)
+# print(my_str1)
+
+# a = "OpenAI"
+# print(a[::3])
+
+
+# s = "ABCDE"
+# print(s[-10:-2])
+
+
+str1 = "Python"
+print(str1[1:5:2])
+
+
+
+

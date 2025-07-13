@@ -275,11 +275,11 @@ y =x    # object same as  x
 
 # BYTE ARRAY
 
-data = bytearray(b'HelloStart')
-slice_copy = data[0:2]  # creates a NEW copy: b'ell'
-slice_copy[1] =88      # changes the copy, not the original
-print(slice_copy)
-print(data)       # bytearray(b'hello') ← original not changed
+# data = bytearray(b'HelloStart')
+# slice_copy = data[0:2]  # creates a NEW copy: b'ell'
+# slice_copy[1] =88      # changes the copy, not the original
+# print(slice_copy)
+# print(data)       # bytearray(b'hello') ← original not changed
 
 
 
@@ -300,8 +300,7 @@ print(data)       # bytearray(b'hello') ← original not changed
 # No copying = saves time and memory.
 
 # You can handle large binary data (e.g., video, files) without loading full copies into memory.
-
-# Let me know if you 
+ 
 
 
 
@@ -376,6 +375,6 @@ print(data)       # bytearray(b'hello') ← original not changed
 
 
 
-x: int, y: float, z: str = 1, 2.5, "Python" # Using type hints while assigning mutiple variables simultaneously cause and error invalid syntax
+# x: int, y: float, z: str = 1, 2.5, "Python" # Using type hints while assigning mutiple variables simultaneously cause and error invalid syntax
 
-print(y, z)
+# print(y, z)
