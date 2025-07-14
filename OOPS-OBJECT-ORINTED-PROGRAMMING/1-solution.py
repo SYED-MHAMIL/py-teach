@@ -76,27 +76,27 @@ class Car:
 # more elegent approash with decorator
 
 
-class Electric_car(Car):
-    def __init__(self,brand,model,battery_size):
-        self.__brand =brand
-        self.model = model
-        self.__battery_size = battery_size
+# class Electric_car(Car):
+#     def __init__(self,brand,model,battery_size):
+#         self.__brand =brand
+#         self.model = model
+#         self.__battery_size = battery_size
     
-    @property
-    def brand(self):
-        print(self.__brand +"!")
-    @brand.setter
-    def brand(self,brand):
-        if brand:
-            self.__brand= brand
-        else:
-            print("Brand cannot be empty")
+#     @property
+#     def brand(self):
+#         print(self.__brand +"!")
+#     @brand.setter
+#     def brand(self,brand):
+#         if brand:
+#             self.__brand= brand
+#         else:
+#             print("Brand cannot be empty")
 
 
-e1=Electric_car('honda','civic','450 kg')
-print(e1.brand)
-e1.brand= "tesla"
-print(e1._Electric_car__brand)
+# e1=Electric_car('honda','civic','450 kg')
+# print(e1.brand)
+# e1.brand= "tesla"
+# print(e1._Electric_car__brand)
 
 
 
@@ -113,21 +113,117 @@ print(e1._Electric_car__brand)
 
 
 
+class Electric_car(Car):
+    def __init__(self,brand,model,battery_size):
+        self.__brand =brand
+        self.model = model
+        self.__battery_size = battery_size
+    
+    @property
+    def brand(self):
+        return getattr(self,'_Electric_car__brand','brand notfound')
+    @brand.setter
+    def brand(self,brand):
+        if brand:
+            self.__brand= brand
+        else:
+            print("Brand cannot be empty")
+    @brand.deleter
+    def brand(self):
+        del self.__brand
+
+
+e1=Electric_car('honda','civic','450 kg')
+print(e1.brand)
+e1.brand= "tesla"
+# del e1.brand
+print(e1.brand)
+
+
+
+
+# +++++=+++++++++++++++  if  yo u want to dont use to decorator  in opps so we can write     +++++++++++++++++++++++
+
+
+# class Elec():
+#     def __init__(self,size):
+#         self.__size =size
+    
+#     def get_size(self):
+#         print(self.__size)
+    
+#     def set_size(self,size):
+#         self.__size =size
+    
+#     size =property(get_size,set_size)
+           
+# ob1=Elec("450 volt")
+
+# print(ob1.size)
+
+
+# ✅ However, if you want to create your own version of @property, you can write a custom descriptor, but it's advanced.
+
+
+
+# ******************************************************
+#   if you want to own decorader for setter or getter 
+# ********************************
+
+class dec:
+    def __init__(self, func):
+        self.getter = func
+        self.setter_func = None
+        self.deleter_func= None
+
+    def __get__(self, instance, owner):
+        return self.getter(instance)
+    
+    def setter(self,setter_fun):
+        self.setter_func = setter_fun   
+        return self
+    
+    
+
+    def __set__(self,instance,value):
+        if self.setter_func is None:
+           raise AttributeError("no setter defined")
+        self.setter_func(instance,value)
+           
+    def deleter(self,deleter_func):
+        self.deleter_func=deleter_func
+        return self
+    
+    def __delete__(self,instance):
+        if self.deleter_func is None:
+           raise AttributeError("no deleter defind") 
+        self.deleter_func(instance)
+        
+
+
+
+
+
+
 # class Electric_car(Car):
+
 #     def __init__(self,brand,model,battery_size):
 #         self.__brand =brand
 #         self.model = model
 #         self.__battery_size = battery_size
     
-#     @property
+   
+#     @dec
 #     def brand(self):
-#         print(self.__brand +"!")
+#         return self.__brand+"!"
+    
 #     @brand.setter
 #     def brand(self,brand):
 #         if brand:
 #             self.__brand= brand
 #         else:
 #             print("Brand cannot be empty")
+    
 #     @brand.deleter
 #     def brand(self):
 #         del self.__brand
@@ -135,8 +231,9 @@ print(e1._Electric_car__brand)
 
 # e1=Electric_car('honda','civic','450 kg')
 # print(e1.brand)
-# e1.brand= "tesla"
-
+# e1.brand="Tesla"
+# print(e1.brand)
+# del e1.brand
 # print(e1.brand)
 
 
