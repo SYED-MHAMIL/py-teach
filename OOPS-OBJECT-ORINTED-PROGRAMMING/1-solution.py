@@ -32,13 +32,13 @@ class Car:
 # CORRECT  WAY  TO  INHERITS CLASS 
 #  ==================    INHERITANCE   ==========
 
-# class Electric_car1(Car):
-#     def __init__(self,brand,model,battery_size):
-#         super().__init__(brand,model)
-#         self.battery_size = battery_size
+class Electric_car1(Car):
+    def __init__(self,brand,model,battery_size):
+        super().__init__(brand,model)
+        self.battery_size = battery_size
 
 
-# tasla = Electric_car1("tesla","Cybertrack","10000 volts")
+tasla = Electric_car1("tesla","Cybertrack","10000 volts")
 
 # print(tasla.fullName())
 
@@ -52,18 +52,18 @@ class Car:
 #                    Encapsulation  
 # ***********************************************************8
 
-# class Electric_car(Car):
-#     def __init__(self,brand,model,battery_size):
-#         self.__brand =brand
-#         self.model = model
-#         self.__battery_size = battery_size
+class Electric_car(Car):
+    def __init__(self,brand,model,battery_size):
+        self.__brand =brand
+        self.model = model
+        self.__battery_size = battery_size
     
-#     # EXAMPLE
-#     def get_brand(self):
-#         print(self.__brand +"!")
-#     # setter
-#     def set_brand(self,brand):
-#         self.__brand= brand
+    # EXAMPLE
+    def get_brand(self):
+        print(self.__brand +"!")
+    # setter
+    def set_brand(self,brand):
+        self.__brand= brand
         
 
 
@@ -76,26 +76,26 @@ class Car:
 # more elegent approash with decorator
 
 
-# class Electric_car(Car):
-#     def __init__(self,brand,model,battery_size):
-#         self.__brand =brand
-#         self.model = model
-#         self.__battery_size = battery_size
+class Electric_car(Car):
+    def __init__(self,brand,model,battery_size):
+        self.__brand =brand
+        self.model = model
+        self.__battery_size = battery_size
     
-#     @property
-#     def brand(self):
-#         print(self.__brand +"!")
-#     @brand.setter
-#     def brand(self,brand):
-#         if brand:
-#             self.__brand= brand
-#         else:
-#             print("Brand cannot be empty")
+    @property
+    def brand(self):
+        print(self.__brand +"!")
+    @brand.setter
+    def brand(self,brand):
+        if brand:
+            self.__brand= brand
+        else:
+            print("Brand cannot be empty")
 
 
-# e1=Electric_car('honda','civic','450 kg')
+e1=Electric_car('honda','civic','450 kg')
 # print(e1.brand)
-# e1.brand= "tesla"
+e1.brand= "tesla"
 # print(e1._Electric_car__brand)
 
 
