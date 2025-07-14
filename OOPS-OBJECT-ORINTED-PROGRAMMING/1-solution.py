@@ -145,21 +145,21 @@ print(e1.brand)
 # +++++=+++++++++++++++  if  yo u want to dont use to decorator  in opps so we can write     +++++++++++++++++++++++
 
 
-# class Elec():
-#     def __init__(self,size):
-#         self.__size =size
+class Elec():
+    def __init__(self,size):
+        self.__size =size
     
-#     def get_size(self):
-#         print(self.__size)
+    def get_size(self):
+        print(self.__size)
     
-#     def set_size(self,size):
-#         self.__size =size
+    def set_size(self,size):
+        self.__size =size
     
-#     size =property(get_size,set_size)
+    size =property(get_size,set_size)
            
-# ob1=Elec("450 volt")
+ob1=Elec("450 volt")
 
-# print(ob1.size)
+print(ob1.size)
 
 
 # ✅ However, if you want to create your own version of @property, you can write a custom descriptor, but it's advanced.
