@@ -324,7 +324,36 @@ print(Car.general_discussion())
 print(new_Car.get_model())
 
 
-
-
 #because of inheritance of class (CAR) which is Car
 print(isinstance(tasla,Car))
+
+
+
+
+
+print('\n ***************************** \n')
+
+# CRETE TWO INHERIT IN ELCRIC Car
+
+class Battery:
+    def __init__(self,batery):
+        self.battery= batery
+
+class Engine:
+    def __init__(self,engine):
+        self.engine = engine
+
+class Electric_car_Two(Battery,Engine):
+    def __init__(self,brand,battery,engine_type):
+        self.brand= brand
+        Battery.__init__(self,battery)
+        Engine.__init__(self,engine_type)
+
+   
+
+e5=Electric_car_Two('corlla','TX 30000','Genuiuen')
+print(e5.battery)
+
+
+
+
