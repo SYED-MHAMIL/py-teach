@@ -64,18 +64,16 @@
 # # Deleting the object explicitly (calls __del__ method)
 # del file_handler
 
-
-
-
-
 #*********************************************
+
+
 class Car:
     def __init__(self,brand,model):
         self.brand= brand
         self.model= model
 
     def full_name(self):
-        return print(f'the car brand is {self.brand} {self.model}')
+        return  print(f'the car brand is {self.brand} {self.model}')
     
 
 class Elec:
