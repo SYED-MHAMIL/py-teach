@@ -85,7 +85,7 @@ ob1= Dog("bil dog" ,2)
 
 # Import required modules
 from abc import ABC, abstractmethod
-
+from abc import ABC,abstractmethod
 # Create Abstract base class
 class Car(ABC):
     def __init__(self, brand, model, year):
@@ -140,22 +140,23 @@ class Bank(ABC):
         self.name = name
         self.IBN_num =number
 
-    @abstractmethod
-    def security(self):
-        pass
+    # @abstractmethod
+    # def security(self):
+    #     pass
 
 class Alhabib(Bank):
     # if  i will  not used msg so i can't access Bank class  you can check to commit the code above
     # 
-    #  
-    def security(self):
-        print(f"you {self.name} bank  no is {self.IBN_num}") 
+    # #  
+    # def security(self):
+    #     print(f"you {self.name} bank  no is {self.IBN_num}") 
 
     # this fun never run without security func implementatation  beacause of abstract method       
     def normal(self):
         print(self.IBN_num)
     
 alhabib =Alhabib("al-habeeb",42342342342342342)
+print(alhabib.name)
 alhabib.normal()
 
 

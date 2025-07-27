@@ -76,27 +76,27 @@
 # more elegent approash with decorator
 
 
-# class Electric_car(Car):
-#     def __init__(self,brand,model,battery_size):
-#         self.__brand =brand
-#         self.model = model
-#         self.__battery_size = battery_size
+class Electric_car():
+    def __init__(self,brand,model,battery_size):
+        self.__brand =brand
+        self.model = model
+        self.__battery_size = battery_size
     
-#     @property
-#     def brand(self):
-#         print(self.__brand +"!")
-#     @brand.setter
-#     def brand(self,brand):
-#         if brand:
-#             self.__brand= brand
-#         else:
-#             print("Brand cannot be empty")
+    @property
+    def brand(self):
+        print(self.__brand +"!")
+    @brand.setter
+    def brand(self,brand):
+        if brand:
+            self.__brand= brand
+        else:
+            print("Brand cannot be empty")
 
 
-# e1=Electric_car('honda','civic','450 kg')
-# # print(e1.brand)
-# e1.brand= "tesla"
-# print(e1._Electric_car__brand)
+e1=Electric_car('honda','civic','450 kg')
+# print(e1.brand)
+e1.brand= "tesla"
+print(e1._Electric_car__brand)
 
 
 
