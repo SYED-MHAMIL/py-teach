@@ -53,14 +53,18 @@ c1 =Car("Honda","Civics")
 c1.start_engine()
 c1.drive()
 c1.set_trafic_signal("red")
-# print(c1.engine_status)
+print(c1.engine_status)
 
     
 
 
             
 
+c2 =Car("Tesla","Cybertruck")
         
+c1.drive()
+c1.set_trafic_signal("red")
+print(c1.engine_status)
 
 
 
