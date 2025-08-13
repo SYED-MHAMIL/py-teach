@@ -68,9 +68,94 @@ class Puzzle:
         
 
 p1 = Puzzle("100")
-# print(str(p1))
+# print(str(p1))''
 
 
 
 
 
+
+
+
+
+
+
+
+
+# If I can access class stuff using the class name, why bother with cls?
+
+
+class Animal:
+     spices = "dog"
+     @classmethod
+     def make(cls):
+         return cls() # 'cls' will be whichever calls the 'cls'
+
+class Lion(Animal):
+    spices ='lion'
+
+sp1=Animal()
+animal= sp1.make()
+print(animal)
+
+sp2 = Lion()
+animal2 = sp2.make()
+print("this is calls =>>>>>>> ",animal2)
+
+# ✅ Because we used cls(), it returned a Dog instance, even though the method was defined in the Animal base class.
+
+
+
+
+# ======================================================================================
+# #   a real-world analogy showing the difference between using cls (dynamic) vs using a hardcoded class name (static) when creating instances.
+
+# # Analogy: Vehicle Factory ======================================================================================
+
+
+
+
+class Vehicle:
+    def __init__(self,brand):
+        self.brand = brand
+    @classmethod
+    def create(cls,brand):
+        return cls(brand)
+
+class Car(Vehicle):
+    pass
+
+class Truck(Vehicle):
+    pass
+
+c = Car("Toy")  
+car = c.create("Toyata")
+truck = Truck.create('Ford')
+
+print(type(car),car.brand)
+print(type(truck),truck.brand)
+
+
+
+
+#  if i will pass static clas name what will be happened ?
+
+class Vehicle:
+    def __init__(self,brand):
+        self.brand = brand
+    @classmethod
+    def create(cls,brand):
+        return Vehicle(brand)
+
+class Car(Vehicle):
+    pass
+
+class Truck(Vehicle):
+    pass
+
+c = Car("Toy") 
+car = c.create("Toyata")
+truck = Truck.create('Ford')
+
+print(type(car),car.brand)
+print(type(truck),truck.brand)
