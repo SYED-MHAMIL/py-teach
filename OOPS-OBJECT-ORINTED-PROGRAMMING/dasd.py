@@ -116,6 +116,7 @@ print("this is calls =>>>>>>> ",animal2)
 
 
 class Vehicle:
+     
     def __init__(self,brand):
         self.brand = brand
     @classmethod
@@ -132,8 +133,8 @@ c = Car("Toy")
 car = c.create("Toyata")
 truck = Truck.create('Ford')
 
-# print(type(car),car.brand)
-# print(type(truck),truck.brand)
+print(type(car),car.brand)
+print(type(truck),truck.brand)
 
 
 
@@ -245,6 +246,6 @@ class BMW(Car):
     def _start_engine(self):
         print("BMW engine is started")
 
-bmw: BMW = BMW("BMW", "i5");
-bmw.start_engine();
+bmw: BMW = BMW("BMW", "i5")
+bmw.start_engine()
 
