@@ -36,4 +36,24 @@ print(car1.engine.run_engine())
 
 # ****************************************************************
 
+class University:
+     def __init__(self,name):
+         self.name =name
+         self.departments = []
+    
+     def addDeparment(self,depart):
+         self.departments.append(depart.department)
+         
+
+class Department:
+    def __init__(self,department):
+        self.department = department 
+
+depart = Department("AI ENGINEER")
+fast  = University("fast")
+fast.addDeparment(depart)
+print(fast.departments)
+
+
+
 
