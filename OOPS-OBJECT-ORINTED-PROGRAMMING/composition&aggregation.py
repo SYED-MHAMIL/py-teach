@@ -13,7 +13,6 @@ class Engine:
 class Car:
     def __init__(self):
         self.engine = Engine()
-
 car1 =Car()
 # print(car1.engine.run_engine())
          
@@ -96,6 +95,9 @@ class Department:
         self.department = department 
 
 depart = Department("AI ENGINEER")
-fast  = University("fast")
-fast.addDeparment(depart)
+standford  = University("Standford")
+standford.addDeparment(depart)
 # print(fast.departments)
+
+
+
