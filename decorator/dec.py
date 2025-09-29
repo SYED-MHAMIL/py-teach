@@ -25,13 +25,15 @@ def greet(fn):
     def fmx():
         print("syed dus sadat hain")
         fn()
+        print("GAme Changer")
+
     return fmx
 
 
 
 @greet
 def name():
-    print("mhmaail")
+    print("mhamil")
 
 
 name()
@@ -177,16 +179,14 @@ def only_even_args(fn):
     return wrapper
 
 
-
-
 @only_even_args
 def add(a, b):
     return a + b
 
 
 
-add(3,4)
-add(2,4)
+# add(3,4)
+# add(2,4)
 
 
 
